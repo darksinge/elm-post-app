@@ -7,6 +7,8 @@ import Html.Events exposing (..)
 import Url
 
 
+
+
 -- MAIN
 
 
@@ -21,7 +23,11 @@ main =
   }
 
 
--- Model
+
+
+-- MODEL
+
+
 
 
 type alias Model =
@@ -37,7 +43,9 @@ init flags url key =
 
 
 
+
 -- SUBSCRIPTIONS
+
 
 
 subscriptions : Model -> Sub Msg
@@ -47,12 +55,18 @@ subscriptions _ =
 
 
 
--- Update
+-- UPDATE
+
+
+
 type Msg
   = Inc
   | Dec
   | UrlChanged Url.Url
   | LinkClicked Browser.UrlRequest
+
+
+
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
@@ -72,7 +86,12 @@ update msg model =
           ( model, Nav.load href )
 
 
--- View
+
+
+-- VIEW
+
+
+
 view : Model -> Browser.Document Msg
 view model =
   { title = "Counter"
